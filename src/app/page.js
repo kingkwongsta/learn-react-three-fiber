@@ -5,7 +5,7 @@ import { Environment, OrbitControls, useTexture } from "@react-three/drei";
 // import worldImage from "../../public/world.jpg";
 
 function Experience() {
-  const map = useTexture("../../public/world.jpg");
+  const map = useTexture("world.jpg");
 
   return (
     <>
@@ -13,7 +13,8 @@ function Experience() {
       <Environment preset="sunset" />
       <OrbitControls />
       <mesh>
-        <sphereGeometry args={[1, 32, , 32]} />
+        <sphereGeometry args={[5, 32, , 32]} />
+        <meshStandardMaterial map={map} side={THREE.BackSide} />
       </mesh>
     </>
   );
