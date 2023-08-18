@@ -2,7 +2,7 @@
 import React, { useState, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Environment, OrbitControls, useTexture } from "@react-three/drei";
-// import worldImage from "../../public/world.jpg";
+import * as THREE from "three";
 
 function Experience() {
   const map = useTexture("world.jpg");
@@ -22,7 +22,11 @@ function Experience() {
 
 export default function Home() {
   return (
-    <Canvas shadows camera={{ position: [3, 3, 3], fov: 30 }}>
+    <Canvas
+      shadows
+      camera={{ position: [2, 2, 2], fov: 90, near: 3 }}
+      rotation={[30, 0, 0]}
+    >
       <color attach="background" args={["#ececec"]} />
       <Experience />
     </Canvas>
