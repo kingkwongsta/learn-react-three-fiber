@@ -14,9 +14,10 @@ function CameraHelper() {
 
 export default function Home() {
   return (
-    <Canvas shadows camera={{ position: [3, 3, 3], fov: 30 }}>
-      <color attach="background" args={["#ececec"]} />
-      <Experience />
-    </Canvas>
+    <div className="h-[400px]">
+      <Canvas shadows camera={{ position: [0, 0, 10], fov: 30 }}>
+        <Experience />
+      </Canvas>
+    </div>
   );
 }
