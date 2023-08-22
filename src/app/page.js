@@ -1,7 +1,13 @@
 "use client";
 import React, { useState, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Environment, OrbitControls, useTexture } from "@react-three/drei";
+import {
+  Environment,
+  OrbitControls,
+  useTexture,
+  Stats,
+} from "@react-three/drei";
+import { Perf } from "r3f-perf";
 import { DoubleSide, Mesh, PerspectiveCamera } from "three";
 import * as THREE from "three";
 import Test from "./components/test";
@@ -22,6 +28,8 @@ export default function Home() {
         <OrbitControls />
         <Box />
         {/* <Experience /> */}
+        <Stats />
+        <Perf position="top-right" />
       </Canvas>
     </div>
   );
