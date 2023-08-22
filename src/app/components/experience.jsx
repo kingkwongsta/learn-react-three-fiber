@@ -5,7 +5,9 @@ export default function Experience() {
   const map = useTexture("textures/world.jpg");
   return (
     <>
-      <ambientLight intensity={0.5} />
+      <ambientLight intensity={2} color={0xffffff} />
+      {/* <pointLight position={[10, 10, 10]} /> */}
+      <directionalLight color={0xffffff} intensity={1} />
       <Environment preset="sunset" />
       <OrbitControls />
       <mesh>

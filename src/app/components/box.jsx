@@ -33,9 +33,18 @@ export default function Box({ position }) {
         geometry={geometry[count]}
         ref={ref}
         position={position}
+        material={
+          new THREE.MeshPhongMaterial({
+            color: 0x049ef4,
+            emissive: 0xb17777,
+            specular: 0x111111,
+            shininess: 30,
+          })
+        }
       >
-        <boxGeometry onClick={(e) => console.log(e.object)} />
-        <meshBasicMaterial color={hovered ? 0xff0000 : 0x00ff00} wireframe />
+        <capsuleGeometry />
+        {/* <boxGeometry onClick={(e) => console.log(e.object)} /> */}
+        {/* <meshBasicMaterial color={hovered ? 0xff0000 : 0x00ff00} wireframe /> */}
       </mesh>
     </>
   );
