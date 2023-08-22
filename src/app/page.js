@@ -19,6 +19,7 @@ export default function Home() {
     <div className="h-[400px]">
       <Canvas shadows camera={{ position: [0, 0, 10], fov: 30 }}>
         <axesHelper args={[10]} />
+        <OrbitControls />
         <Box />
         {/* <Experience /> */}
       </Canvas>
