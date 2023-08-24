@@ -35,19 +35,20 @@ function Scene() {
   useHelper(spotLight, SpotLightHelper, "teal");
   return (
     <>
-      {/* <pointLight
+      <pointLight
         ref={pointLight}
-        color="red"
-        position={[4, 4, 0]}
+        color="#fff"
+        position={[1, 2.5, 0]}
         intensity={5}
-      /> */}
-      <spotLight
-        intensity={1}
+      />
+      {/* <spotLight
+        intensity={2}
         position={[4, 5, 2]}
         ref={spotLight}
         angle={0.5}
         distance={10}
-      />
+      /> */}
+      {/* <ambientLight intensity={2} color={0xffffff} /> */}
     </>
   );
 }
@@ -66,8 +67,6 @@ export default function Home() {
         maxPolarAngle={Math.PI - Math.PI / 6}
         /> */}
         <OrbitControls />
-        {/* <ambientLight intensity={2} color={0xffffff} /> */}
-
         {/* <directionalLight color={0xffffff} intensity={1} /> */}
         {/* <Box position={[-1.75, -1.75, 0]} />
         <Box position={[1.75, -1.75, 0]} />
