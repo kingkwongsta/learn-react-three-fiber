@@ -39,6 +39,8 @@ function Scene() {
   useHelper(directionalLight, DirectionalLightHelper, 5, "blue");
   return (
     <>
+      <Environment files="./sunset.hdr" background />
+
       {/* <pointLight
         castShadow
         ref={pointLight}
@@ -46,13 +48,13 @@ function Scene() {
         position={[1, 2.5, 0]}
         intensity={5}
       /> */}
-      <directionalLight
+      {/* <directionalLight
         castShadow="true"
         ref={directionalLight}
         color="#fff"
         position={[1, 2, 0]}
         intensity={2}
-      />
+      /> */}
       {/* <spotLight
         intensity={2}
         position={[4, 5, 2]}
