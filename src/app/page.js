@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useLoader } from "@react-three/fiber";
 import {
   Environment,
   OrbitControls,
@@ -66,12 +66,14 @@ function Scene() {
 }
 
 export default function Home() {
+  const texture = useLoader(THREE.TextureLoader, "./textures/test1.png");
+
   return (
     <div className="h-[400px]">
       <Canvas shadows camera={{ position: [0, 0, 10], fov: 30 }}>
         <Scene />
         <axesHelper args={[10]} />
-        <gridHelper args={[20, 20, 0xff0000, "teal"]} />
+        <gridHelper args={[20, 10, 0xff0000, "grey"]} />
         {/* <OrbitControls
         minAzimuthAngle={-Math.PI / 4}
         maxAzimuthAngle={Math.PI / 4}
@@ -79,8 +81,8 @@ export default function Home() {
         maxPolarAngle={Math.PI - Math.PI / 6}
         /> */}
         <OrbitControls />
-        <Floor position={[0, -1, 0]} />
-        <Icosahedron />
+        <Floor position={[0, -2, 0]} />
+        <Icosahedron material={new THREE.MeshBasicMaterial({ map: texture })} />
         <Stats />
         <Perf position="top-right" />
       </Canvas>
