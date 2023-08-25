@@ -3,8 +3,9 @@ import { Environment } from "@react-three/drei";
 function Lights() {
   return (
     <>
+      {/* ***ENVIRONMENT*** */}
       <Environment files="./sunset.hdr" background />
-
+      {/* ***POINT*** */}
       <pointLight
         castShadow
         ref={pointLight}
@@ -12,6 +13,7 @@ function Lights() {
         position={[1, 2.5, 0]}
         intensity={5}
       />
+      {/* ***DIRECTIONAL*** */}
       <directionalLight
         castShadow="true"
         ref={directionalLight}
@@ -19,6 +21,7 @@ function Lights() {
         position={[1, 2, 0]}
         intensity={2}
       />
+      {/* ***SPOT*** */}
       <spotLight
         intensity={2}
         position={[4, 5, 2]}
@@ -26,6 +29,7 @@ function Lights() {
         angle={0.5}
         distance={10}
       />
+      {/* ***AMBIENT*** */}
       <ambientLight intensity={2} color={0xffffff} />
     </>
   );
