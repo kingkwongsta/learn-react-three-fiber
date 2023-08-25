@@ -22,6 +22,7 @@ import Test from "./components/test";
 import Experience from "./components/experience";
 import { Fish } from "./components/fish";
 import Box from "./components/box";
+import Birb from "./components/birb";
 import Icosahedron from "./components/Icosahedron";
 import Floor from "./components/floor";
 
@@ -40,29 +41,6 @@ function Scene() {
   return (
     <>
       <Environment files="./sunset.hdr" background />
-
-      {/* <pointLight
-        castShadow
-        ref={pointLight}
-        color="#fff"
-        position={[1, 2.5, 0]}
-        intensity={5}
-      /> */}
-      {/* <directionalLight
-        castShadow="true"
-        ref={directionalLight}
-        color="#fff"
-        position={[1, 2, 0]}
-        intensity={2}
-      /> */}
-      {/* <spotLight
-        intensity={2}
-        position={[4, 5, 2]}
-        ref={spotLight}
-        angle={0.5}
-        distance={10}
-      /> */}
-      {/* <ambientLight intensity={2} color={0xffffff} /> */}
     </>
   );
 }
@@ -84,7 +62,8 @@ export default function Home() {
         /> */}
         <OrbitControls />
         <Floor position={[0, -2, 0]} />
-        <Icosahedron material={new THREE.MeshBasicMaterial({ map: texture })} />
+        <Birb />
+        {/* <Icosahedron material={new THREE.MeshBasicMaterial({ map: texture })} /> */}
         <Stats />
         <Perf position="top-right" />
       </Canvas>
