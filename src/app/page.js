@@ -23,6 +23,7 @@ import Experience from "./components/experience";
 import { Fish } from "./components/fish";
 import Box from "./components/box";
 import Birb from "./components/birb";
+import MushroomKing from "./components/MushroomKing";
 import Icosahedron from "./components/Icosahedron";
 import Floor from "./components/floor";
 
@@ -62,7 +63,7 @@ export default function Home() {
         /> */}
         <OrbitControls />
         <Floor position={[0, -2, 0]} />
-        <Birb />
+        <MushroomKing />
         {/* <Icosahedron material={new THREE.MeshBasicMaterial({ map: texture })} /> */}
         <Stats />
         <Perf position="top-right" />
