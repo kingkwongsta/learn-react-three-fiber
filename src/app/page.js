@@ -42,6 +42,7 @@ function Scene() {
   return (
     <>
       <Environment files="./sunset.hdr" background />
+      <OrbitControls target={[0, 1, 0]} maxPolarAngle={[1.5]} />
     </>
   );
 }
@@ -61,7 +62,6 @@ export default function Home() {
         minPolarAngle={Math.PI / 6}
         maxPolarAngle={Math.PI - Math.PI / 6}
         /> */}
-        <OrbitControls />
         <Floor position={[0, -2, 0]} />
         <MushroomKing />
         {/* <Icosahedron material={new THREE.MeshBasicMaterial({ map: texture })} /> */}
