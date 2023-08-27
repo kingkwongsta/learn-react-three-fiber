@@ -76,8 +76,8 @@ export default function Home() {
         <Floor position={[0, -2, 0]} />
         <MushroomKing />
         {/* <Icosahedron material={new THREE.MeshBasicMaterial({ map: texture })} /> */}
-        <Stats />
-        <Perf position="top-right" />
+        {/* <Stats /> */}
+        <Perf position="bottom-right" />
       </Canvas>
     </div>
   );
