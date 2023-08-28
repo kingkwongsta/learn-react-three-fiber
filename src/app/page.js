@@ -26,6 +26,7 @@ import Birb from "./components/birb";
 import MushroomKing from "./components/MushroomKing";
 import Icosahedron from "./components/Icosahedron";
 import Floor from "./components/floor";
+import Lambo from "./components/lambo";
 
 function CameraHelper() {
   const camera = new PerspectiveCamera(60, 1, 1, 3);
@@ -74,7 +75,7 @@ export default function Home() {
         maxPolarAngle={Math.PI - Math.PI / 6}
         /> */}
         <Floor position={[0, -2, 0]} />
-        <MushroomKing />
+        <Lambo />
         {/* <Icosahedron material={new THREE.MeshBasicMaterial({ map: texture })} /> */}
         {/* <Stats /> */}
         <Perf position="bottom-right" />
