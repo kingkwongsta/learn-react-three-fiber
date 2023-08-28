@@ -15,9 +15,9 @@ export default function Ground() {
       t.wrapT = RepeatWrapping;
       t.repeat.set(5, 5);
       t.offset.set(0, 0);
+      t.colorSpace = LinearSRGBColorSpace;
+      t.needsUpdate = true;
     });
-
-    normal.encoding = LinearSRGBColorSpace;
   }, [normal, roughness]);
 
   useFrame((state, delta) => {

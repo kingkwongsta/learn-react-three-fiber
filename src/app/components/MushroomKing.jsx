@@ -8,7 +8,9 @@ import { useGLTF, useAnimations } from "@react-three/drei";
 
 export default function MushroomKing(props) {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF("/models/MushroomKing.gltf");
+  const { nodes, materials, animations } = useGLTF(
+    "/models/creatures/MushroomKing.gltf"
+  );
   const { actions } = useAnimations(animations, group);
   return (
     <group ref={group} {...props} dispose={null}>
