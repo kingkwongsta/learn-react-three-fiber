@@ -27,6 +27,7 @@ import MushroomKing from "./components/MushroomKing";
 import Icosahedron from "./components/Icosahedron";
 import Floor from "./components/floor";
 import Lambo from "./components/lambo";
+import Rings from "./components/rings";
 
 function CameraHelper() {
   const camera = new PerspectiveCamera(60, 1, 1, 3);
@@ -76,6 +77,7 @@ export default function Home() {
         /> */}
         <Floor position={[0, -2, 0]} />
         <Lambo />
+        <Rings />
         {/* <Icosahedron material={new THREE.MeshBasicMaterial({ map: texture })} /> */}
         {/* <Stats /> */}
         <Perf position="bottom-right" />
