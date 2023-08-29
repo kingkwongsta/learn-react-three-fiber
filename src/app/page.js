@@ -88,6 +88,23 @@ export default function Home() {
   const scene = new THREE.Scene();
   const geometry = new THREE.BoxGeometry(1, 1, 1);
   const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+  const cube = new THREE.Mesh(geometry, material);
+  scene.add(cube);
 
-  return <main>{/* <CanvasBoard />; */}</main>;
+  //sizes
+  const sizes = { with: 800, height: 600 };
+
+  //three js camera
+  const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height);
+  scene.add(camera);
+
+  //renderer
+  const renderer = new THREE.WebGLRenderer({});
+
+  return (
+    <main>
+      <canvas className="webgl"></canvas>
+      {/* <CanvasBoard />; */}
+    </main>
+  );
 }
