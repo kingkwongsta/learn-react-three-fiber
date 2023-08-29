@@ -43,7 +43,7 @@ function Scene() {
   useHelper(directionalLight, DirectionalLightHelper, 5, "blue");
   return (
     <>
-      {/* <Environment files="./sunset.hdr" background /> */}
+      <Environment files="./sunset.hdr" background />
       <OrbitControls target={[0, 1, 0]} maxPolarAngle={[1.5]} />
       <color args={[0x000000]} attach="background" />
       <spotLight
