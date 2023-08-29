@@ -60,9 +60,7 @@ function Scene() {
   );
 }
 
-export default function Home() {
-  const texture = useLoader(THREE.TextureLoader, "./textures/test1.png");
-
+function CanvasBoard() {
   return (
     <div className="h-[600px]">
       <Canvas shadows camera={{ position: [3, 2, 5], fov: 50 }}>
@@ -70,11 +68,11 @@ export default function Home() {
         <axesHelper args={[10]} />
         <gridHelper args={[20, 10, 0xff0000, "grey"]} />
         {/* <OrbitControls
-        minAzimuthAngle={-Math.PI / 4}
-        maxAzimuthAngle={Math.PI / 4}
-        minPolarAngle={Math.PI / 6}
-        maxPolarAngle={Math.PI - Math.PI / 6}
-        /> */}
+  minAzimuthAngle={-Math.PI / 4}
+  maxAzimuthAngle={Math.PI / 4}
+  minPolarAngle={Math.PI / 6}
+  maxPolarAngle={Math.PI - Math.PI / 6}
+  /> */}
         <Floor position={[0, -2, 0]} />
         <Lambo />
         <Rings />
@@ -84,4 +82,12 @@ export default function Home() {
       </Canvas>
     </div>
   );
+}
+
+export default function Home() {
+  const scene = new THREE.Scene();
+  const geometry = new THREE.BoxGeometry(1, 1, 1);
+  const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+
+  return <main>{/* <CanvasBoard />; */}</main>;
 }
