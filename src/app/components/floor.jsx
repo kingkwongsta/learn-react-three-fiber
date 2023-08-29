@@ -9,27 +9,10 @@ export default function Ground() {
     "textures/terrain-normal.jpg",
   ]);
 
-  useEffect(() => {
-    [normal, roughness].forEach((t) => {
-      t.wrapS = RepeatWrapping;
-      t.wrapT = RepeatWrapping;
-      t.repeat.set(5, 5);
-      t.offset.set(0, 0);
-      t.colorSpace = LinearSRGBColorSpace;
-      t.needsUpdate = true;
-    });
-  }, [normal, roughness]);
-
-  useFrame((state, delta) => {
-    let t = -state.clock.getElapsedTime() * 0.128;
-    roughness.offset.set(0, t % 1);
-    normal.offset.set(0, t % 1);
-  });
-
   return (
     <mesh rotation-x={-Math.PI * 0.5} castShadow receiveShadow>
       <planeGeometry args={[30, 30]} />
-      <MeshReflectorMaterial
+      {/* <MeshReflectorMaterial
         envMapIntensity={0}
         normalMap={normal}
         normalScale={[0.15, 0.15]}
@@ -49,6 +32,11 @@ export default function Ground() {
         depthToBlurRatioBias={0.25} // Adds a bias factor to the depthTexture before calculating the blur amount [blurFactor = blurTexture * (depthTexture + bias)]. It accepts values between 0 and 1, default is 0.25. An amount > 0 of bias makes sure that the blurTexture is not too sharp because of the multiplication with the depthTexture
         debug={0}
         reflectorOffset={0.2} // Offsets the virtual camera that projects the reflection. Useful when the reflective surface is some distance from the object's origin (default = 0)
+      /> */}
+      <meshStandardMaterial
+        normalMap={normal}
+        roughnessMap={roughness}
+        resolution={1024}
       />
     </mesh>
   );
