@@ -87,8 +87,7 @@ function CanvasBoard() {
 export default function Home() {
   return (
     <main>
-      <canvas></canvas>
-      {/* <CanvasBoard />; */}
+      <CanvasBoard />;
     </main>
   );
 }
