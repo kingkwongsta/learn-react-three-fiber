@@ -4,21 +4,20 @@ import { useRef } from "react";
 import { Mesh } from "three";
 
 export default function Test() {
-  const meshRef = useRef<Mesh>(null); // prettier-ignore
-
-  useFrame(() => {
-    if (!meshRef.current) {
-      return;
-    }
-    meshRef.current.rotation.x += 0.01;
-    meshRef.current.rotation.y += 0.01;
-  });
-
   return (
-    <mesh useRef={meshRef}>
-      <PerspectiveCamera />
-      <boxGeometry />
-      <meshStandardMaterial color="blue" />
-    </mesh>
+    <>
+      <mesh position-x={-4}>
+        <sphereGeometry args={[1]} />
+        <meshStandardMaterial color="orange" />
+      </mesh>
+      <mesh position-x={4}>
+        <boxGeometry args={[1]} />
+        <meshStandardMaterial color="purple" />
+      </mesh>
+      <mesh rotation={[-Math.PI * 0.5, 0, 0]} position-y={-1}>
+        <planeGeometry args={[10, 10]} />
+        <meshStandardMaterial color="green" />
+      </mesh>
+    </>
   );
 }
