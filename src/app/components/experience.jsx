@@ -48,7 +48,6 @@ export default function Experience() {
       <div className="h-[600px]">
         <Canvas shadows camera={{ position: [-5, 0, 0], fov: 50 }}>
           <Scene />
-          <Test />
           <CustomGeo />
           {/* 
           <axesHelper args={[10]} />
