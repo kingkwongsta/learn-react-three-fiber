@@ -19,11 +19,11 @@ export default function Test() {
   return (
     <>
       <group ref={groupRef}>
-        <mesh position={[-4, 1, 0]} scale={1.5} ref={sphereRef}>
+        <mesh position={[-3, 1, 0]} scale={1.5} ref={sphereRef}>
           <sphereGeometry />
           <meshStandardMaterial color="orange" wireframe />
         </mesh>
-        <mesh position-x={4} ref={boxRef}>
+        <mesh position-x={3} ref={boxRef}>
           <boxGeometry />
           <meshStandardMaterial color="purple" />
         </mesh>
