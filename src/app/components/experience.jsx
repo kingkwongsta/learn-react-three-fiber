@@ -13,6 +13,7 @@ import Floor from "./Floor";
 import Lambo from "./Lambo";
 import Rings from "./Rings";
 import Test from "./test";
+import CustomGeo from "./customgeo";
 
 function Scene() {
   const pointLight = useRef();
@@ -48,6 +49,7 @@ export default function Experience() {
         <Canvas shadows camera={{ position: [-5, 0, 0], fov: 50 }}>
           <Scene />
           <Test />
+          <CustomGeo />
           {/* 
           <axesHelper args={[10]} />
           <gridHelper args={[20, 10, 0xff0000, "grey"]} />
