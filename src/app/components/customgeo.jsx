@@ -52,23 +52,14 @@ export default function CustomGeo() {
         </bufferGeometry>
         <meshBasicMaterial color="blue" side={THREE.DoubleSide} />
       </mesh> */}
-      {/* <mesh>
-        <extrudeGeometry
-          shapes={shape}
-          steps={extrudeSettings.steps}
-          depth={extrudeSettings.depth}
-          bevelEnabled={extrudeSettings.bevelEnabled}
-          bevelThickness={extrudeSettings.bevelThickness}
-          bevelSize={extrudeSettings.bevelSize}
-          bevelOffset={extrudeSettings.bevelOffset}
-          bevelSegments={extrudeSettings.bevelSegments}
-        />
-        <meshBasicMaterial color="green" side={THREE.DoubleSide} />
-      </mesh> */}
-      <mesh ref={cap}>
-        <capsuleGeometry args={[1, 4, 10, 10]} />
+      <mesh>
+        <extrudeGeometry args={[shape, extrudeSettings]} />
         <meshBasicMaterial color="green" side={THREE.DoubleSide} />
       </mesh>
+      {/* <mesh ref={cap}>
+        <capsuleGeometry args={[1, 4, 10, 10]} />
+        <meshBasicMaterial color="green" side={THREE.DoubleSide} />
+      </mesh> */}
       <mesh></mesh>
     </>
   );
