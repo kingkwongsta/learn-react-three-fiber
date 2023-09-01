@@ -24,9 +24,9 @@ function Scene() {
   useHelper(directionalLight, DirectionalLightHelper, 5, "blue");
 
   useFrame((state, delta) => {
-    const angle = state.clock.getElapsedTime();
-    state.camera.position.x = Math.sin(angle) * 10;
-    state.camera.position.z = Math.cos(angle) * 10;
+    const angle = state.clock.getElapsedTime() / 10;
+    state.camera.position.x = Math.sin(angle) * 40;
+    state.camera.position.z = Math.cos(angle) * 40;
     state.camera.lookAt(0, 0, 0);
   });
 
