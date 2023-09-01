@@ -46,7 +46,11 @@ export default function CustomGeo() {
         <meshBasicMaterial color="blue" side={THREE.DoubleSide} />
       </mesh>
       <mesh>
-        <extrudeGeometry args={(shape, extrudeSettings)} />
+        <extrudeGeometry
+          args={[shape]}
+          steps={extrudeSettings.steps}
+          depth={extrudeSettings.depth}
+        />
       </mesh>
     </>
   );
