@@ -66,9 +66,10 @@ export default function CustomGeo() {
         <meshBasicMaterial color="green" side={THREE.DoubleSide} />
       </mesh> */}
       <mesh ref={cap}>
-        <capsuleGeometry radius={10} length={12} />
+        <capsuleGeometry radius={10} length={16} />
         <meshBasicMaterial color="green" side={THREE.DoubleSide} />
       </mesh>
+      <mesh></mesh>
     </>
   );
 }
