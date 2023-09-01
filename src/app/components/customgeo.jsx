@@ -25,10 +25,10 @@ export default function CustomGeo() {
 
   const extrudeSettings = {
     steps: 2,
-    depth: 16,
+    depth: 2,
     bevelEnabled: true,
-    bevelThickness: 1,
-    bevelSize: 1,
+    bevelThickness: 2,
+    bevelSize: 2,
     bevelOffset: 0,
     bevelSegments: 1,
   };
@@ -52,14 +52,14 @@ export default function CustomGeo() {
         </bufferGeometry>
         <meshBasicMaterial color="blue" side={THREE.DoubleSide} />
       </mesh> */}
-      <mesh>
+      {/* <mesh>
         <extrudeGeometry args={[shape, extrudeSettings]} />
+        <meshStandardMaterial color="red" side={THREE.DoubleSide} />
+      </mesh> */}
+      <mesh ref={cap}>
+        <capsuleGeometry args={[1, 2, 10, 10]} />
         <meshBasicMaterial color="green" side={THREE.DoubleSide} />
       </mesh>
-      {/* <mesh ref={cap}>
-        <capsuleGeometry args={[1, 4, 10, 10]} />
-        <meshBasicMaterial color="green" side={THREE.DoubleSide} />
-      </mesh> */}
       <mesh></mesh>
     </>
   );

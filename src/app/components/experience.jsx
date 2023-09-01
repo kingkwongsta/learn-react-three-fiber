@@ -1,5 +1,5 @@
 "use client";
-import { Canvas, useLoader } from "@react-three/fiber";
+import { Canvas, useLoader, useFrame } from "@react-three/fiber";
 import { Environment, OrbitControls, useHelper } from "@react-three/drei";
 import { Perf } from "r3f-perf";
 import {
@@ -22,6 +22,14 @@ function Scene() {
   useHelper(pointLight, PointLightHelper, 0.5, "hotpink");
   useHelper(spotLight, SpotLightHelper, "teal");
   useHelper(directionalLight, DirectionalLightHelper, 5, "blue");
+
+  useFrame((state, delta) => {
+    const angle = state.clock.getElapsedTime();
+    state.camera.position.x = Math.sin(angle) * 10;
+    state.camera.position.z = Math.cos(angle) * 10;
+    state.camera.lookAt(0, 0, 0);
+  });
+
   return (
     <>
       <directionalLight
@@ -30,7 +38,7 @@ function Scene() {
         intensity={3}
       />
       <Environment files="./sunset.hdr" background />
-      <OrbitControls target={[0, 1, 0]} maxPolarAngle={[1.5]} />
+      {/* <OrbitControls target={[0, 1, 0]} maxPolarAngle={[1.5]} /> */}
       <color args={[0x000000]} attach="background" />
       {/* <PerspectiveCamera makeDefault fov={50} position={[3, 2, 5]} /> */}
     </>
@@ -46,7 +54,15 @@ export default function Experience() {
   return (
     <>
       <div className="h-[600px]">
-        <Canvas shadows camera={{ position: [-5, 0, 0], fov: 50 }}>
+        <Canvas
+          shadows
+          camera={{
+            fov: 50,
+            near: 0.1,
+            far: 200,
+            position: [10, 2, 5],
+          }}
+        >
           <Scene />
           <CustomGeo />
           {/* 
