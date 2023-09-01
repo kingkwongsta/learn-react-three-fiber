@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useRef } from "react";
 import * as THREE from "three";
 
 export default function CustomGeo() {
@@ -12,8 +12,8 @@ export default function CustomGeo() {
     return positions;
   }, []);
 
-  const length = 12,
-    width = 8;
+  const length = 5,
+    width = 5;
 
   const shape = new THREE.Shape();
   shape.moveTo(0, 0);
@@ -47,10 +47,16 @@ export default function CustomGeo() {
       </mesh>
       <mesh>
         <extrudeGeometry
-          args={[shape]}
+          shapes={shape}
           steps={extrudeSettings.steps}
           depth={extrudeSettings.depth}
+          bevelEnabled={extrudeSettings.bevelEnabled}
+          bevelThickness={extrudeSettings.bevelThickness}
+          bevelSize={extrudeSettings.bevelSize}
+          bevelOffset={extrudeSettings.bevelOffset}
+          bevelSegments={extrudeSettings.bevelSegments}
         />
+        <meshBasicMaterial color="green" side={THREE.DoubleSide} />
       </mesh>
     </>
   );
