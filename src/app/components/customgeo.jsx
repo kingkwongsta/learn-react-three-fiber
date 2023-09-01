@@ -12,6 +12,26 @@ export default function CustomGeo() {
     return positions;
   }, []);
 
+  const length = 12,
+    width = 8;
+
+  const shape = new THREE.Shape();
+  shape.moveTo(0, 0);
+  shape.lineTo(0, width);
+  shape.lineTo(length, width);
+  shape.lineTo(length, 0);
+  shape.lineTo(0, 0);
+
+  const extrudeSettings = {
+    steps: 2,
+    depth: 16,
+    bevelEnabled: true,
+    bevelThickness: 1,
+    bevelSize: 1,
+    bevelOffset: 0,
+    bevelSegments: 1,
+  };
+
   return (
     <>
       <mesh>
@@ -26,9 +46,7 @@ export default function CustomGeo() {
         <meshBasicMaterial color="blue" side={THREE.DoubleSide} />
       </mesh>
       <mesh>
-        <extrudeGeometry
-          args={([<boxBufferGeometry />], { color: 0x00ff00 })}
-        />
+        <extrudeGeometry args={(shape, extrudeSettings)} />
       </mesh>
     </>
   );
