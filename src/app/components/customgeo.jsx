@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useMemo, useRef } from "react";
 import * as THREE from "three";
 
@@ -32,9 +33,15 @@ export default function CustomGeo() {
     bevelSegments: 1,
   };
 
+  const cap = useRef();
+
+  useEffect(() => {
+    console.log(cap.current);
+  }, []);
+
   return (
     <>
-      <mesh>
+      {/* <mesh>
         <bufferGeometry>
           <bufferAttribute
             attach="attributes-position"
@@ -44,8 +51,8 @@ export default function CustomGeo() {
           />
         </bufferGeometry>
         <meshBasicMaterial color="blue" side={THREE.DoubleSide} />
-      </mesh>
-      <mesh>
+      </mesh> */}
+      {/* <mesh>
         <extrudeGeometry
           shapes={shape}
           steps={extrudeSettings.steps}
@@ -56,6 +63,10 @@ export default function CustomGeo() {
           bevelOffset={extrudeSettings.bevelOffset}
           bevelSegments={extrudeSettings.bevelSegments}
         />
+        <meshBasicMaterial color="green" side={THREE.DoubleSide} />
+      </mesh> */}
+      <mesh ref={cap}>
+        <capsuleGeometry radius={10} length={12} />
         <meshBasicMaterial color="green" side={THREE.DoubleSide} />
       </mesh>
     </>
