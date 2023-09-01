@@ -23,7 +23,12 @@ export default function CustomGeo() {
             array={positions}
           />
         </bufferGeometry>
-        <meshBasicMaterial color="red" side={THREE.DoubleSide} />
+        <meshBasicMaterial color="blue" side={THREE.DoubleSide} />
+      </mesh>
+      <mesh>
+        <extrudeGeometry
+          args={([<boxBufferGeometry />], { color: 0x00ff00 })}
+        />
       </mesh>
     </>
   );
