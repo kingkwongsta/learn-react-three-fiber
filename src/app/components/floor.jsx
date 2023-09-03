@@ -3,7 +3,7 @@ import { useFrame, useLoader } from "@react-three/fiber";
 import { MeshReflectorMaterial } from "@react-three/drei";
 import { LinearSRGBColorSpace, RepeatWrapping, TextureLoader } from "three";
 
-export default function Ground() {
+export default function Floor() {
   const [roughness, normal] = useLoader(TextureLoader, [
     "textures/terrain-roughness.jpg",
     "textures/terrain-normal.jpg",
@@ -37,7 +37,8 @@ export default function Ground() {
         normalMap={normal}
         roughnessMap={roughness}
         resolution={1024}
-      /> */}
+      />
+      <meshStandardMaterial color="green" /> */}
     </mesh>
   );
 }
