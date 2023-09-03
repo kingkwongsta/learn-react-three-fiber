@@ -16,7 +16,6 @@ import {
   TextureLoader,
 } from "three";
 import { useRef } from "react";
-import Lambo from "./Lambo";
 import Rings from "./Rings";
 import Test from "./test";
 import AE86 from "./ae86";
@@ -46,7 +45,7 @@ function Scene() {
       />
       {/* <Stage environment="city" intensity={1} /> */}
       <Environment files="./sunset.hdr" background />
-      <OrbitControls target={[0, 1, 0]} maxPolarAngle={[1.5]} />
+      {/* <OrbitControls target={[0, 1, 0]} maxPolarAngle={[1.5]} /> */}
       <color args={[0x000000]} attach="background" />
       {/* <PerspectiveCamera makeDefault fov={50} position={[3, 2, 5]} /> */}
     </>
@@ -67,12 +66,14 @@ function Floor() {
   const floorRef = useRef();
 
   useFrame((state, delta) => {
-    floorRef.current.position.y += 1;
+    if (floorRef.current) {
+      floorRef.current.position.z += 1 / 100;
+    }
   });
 
   return (
-    <mesh rotation-x={-Math.PI * 0.5} castShadow receiveShadow>
-      <planeGeometry args={[30, 30]} ref={floorRef} />
+    <mesh rotation-x={-Math.PI * 0.5} ref={floorRef} castShadow receiveShadow>
+      <planeGeometry args={[30, 30]} />
       <MeshReflectorMaterial
         envMapIntensity={0}
         normalMap={normal}

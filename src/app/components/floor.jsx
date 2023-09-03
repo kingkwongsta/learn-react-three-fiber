@@ -12,9 +12,11 @@ export default function Floor() {
   const floorRef = useRef();
 
   useFrame((state, delta) => {
-    floorRef.current.position.y += 1;
+    if (floorRef.current) {
+      floorRef.current.position.x += 1;
+    }
   });
-
+  z;
   return (
     <mesh rotation-x={-Math.PI * 0.5} castShadow receiveShadow>
       <planeGeometry args={[30, 30]} ref={floorRef} />
@@ -39,12 +41,6 @@ export default function Floor() {
         debug={0}
         reflectorOffset={0.2} // Offsets the virtual camera that projects the reflection. Useful when the reflective surface is some distance from the object's origin (default = 0)
       />
-      {/* <meshStandardMaterial
-        normalMap={normal}
-        roughnessMap={roughness}
-        resolution={1024}
-      />
-      <meshStandardMaterial color="green" /> */}
     </mesh>
   );
 }
