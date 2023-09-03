@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useFrame, useLoader } from "@react-three/fiber";
 import { MeshReflectorMaterial } from "@react-three/drei";
 import { LinearSRGBColorSpace, RepeatWrapping, TextureLoader } from "three";
@@ -9,9 +9,15 @@ export default function Floor() {
     "textures/terrain-normal.jpg",
   ]);
 
+  const floorRef = useRef();
+
+  useFrame((state, delta) => {
+    floorRef.current.position.y += 1;
+  });
+
   return (
     <mesh rotation-x={-Math.PI * 0.5} castShadow receiveShadow>
-      <planeGeometry args={[30, 30]} />
+      <planeGeometry args={[30, 30]} ref={floorRef} />
       <MeshReflectorMaterial
         envMapIntensity={0}
         normalMap={normal}
