@@ -29,33 +29,52 @@ function Scene() {
   useHelper(spotLight, SpotLightHelper, "teal");
   useHelper(directionalLight, DirectionalLightHelper, 5, "teal");
 
-  useFrame((state, delta) => {
-    const angle = state.clock.getElapsedTime() / 10;
-    state.camera.position.x = Math.sin(angle) * 20;
-    state.camera.position.z = Math.cos(angle) * 20;
-    state.camera.lookAt(0, 0, 0);
-  });
+  // //circle around the scene - center focus
+  // useFrame((state, delta) => {
+  //   const angle = state.clock.getElapsedTime() / 10;
+  //   state.camera.position.x = Math.sin(angle) * 20;
+  //   state.camera.position.z = Math.cos(angle) * 20;
+  //   state.camera.lookAt(0, 0, 0);
+  // });
 
   return (
     <>
       <directionalLight
         position={[5, 2, 2]}
         ref={directionalLight}
-        intensity={4}
+        intensity={8}
       />
       {/* <Stage environment="city" intensity={1} /> */}
       {/* <Environment files="./sunset.hdr" background /> */}
-      <OrbitControls target={[0, 1, 0]} maxPolarAngle={[1.5]} />
+      {/* <OrbitControls target={[0, 1, 0]} maxPolarAngle={[1.5]} /> */}
       <color args={[0x000000]} attach="background" />
       {/* <PerspectiveCamera makeDefault fov={50} position={[3, 2, 5]} /> */}
     </>
   );
 }
 
-// function CameraHelper() {
-//   const camera = new PerspectiveCamera();
-//   return <cameraHelper args={[camera]} />;
-// }
+//cool camera movement rig
+
+function Rig({ children }) {
+  const outer = useRef();
+  const inner = useRef();
+  useFrame(({ camera, clock }) => {
+    const t = clock.getElapsedTime();
+    outer.current.position.y = THREE.MathUtils.lerp(
+      outer.current.position.y,
+      0,
+      0.05
+    );
+    inner.current.rotation.y = Math.sin(t / 8) * Math.PI;
+    inner.current.position.z = 5 + -Math.sin(t / 2) * 10;
+    inner.current.position.y = -5 + Math.sin(t / 2) * 2;
+  });
+  return (
+    <group position={[0, -100, 0]} ref={outer}>
+      <group ref={inner}>{children}</group>
+    </group>
+  );
+}
 
 function Floor() {
   const [roughness, normal] = useLoader(TextureLoader, [
@@ -67,13 +86,13 @@ function Floor() {
 
   useFrame((state, delta) => {
     if (floorRef.current) {
-      floorRef.current.position.z += -(1 / 500);
+      floorRef.current.position.z += -(1 / 100);
     }
   });
 
   return (
     <mesh rotation-x={-Math.PI * 0.5} ref={floorRef} castShadow receiveShadow>
-      <planeGeometry args={[30, 30]} />
+      <planeGeometry args={[100, 100]} />
       <MeshReflectorMaterial
         envMapIntensity={0}
         normalMap={normal}
