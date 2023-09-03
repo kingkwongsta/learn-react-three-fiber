@@ -29,12 +29,12 @@ function Scene() {
   useHelper(spotLight, SpotLightHelper, "teal");
   useHelper(directionalLight, DirectionalLightHelper, 5, "teal");
 
-  // useFrame((state, delta) => {
-  //   const angle = state.clock.getElapsedTime() / 10;
-  //   state.camera.position.x = Math.sin(angle) * 20;
-  //   state.camera.position.z = Math.cos(angle) * 20;
-  //   state.camera.lookAt(0, 0, 0);
-  // });
+  useFrame((state, delta) => {
+    const angle = state.clock.getElapsedTime() / 10;
+    state.camera.position.x = Math.sin(angle) * 20;
+    state.camera.position.z = Math.cos(angle) * 20;
+    state.camera.lookAt(0, 0, 0);
+  });
 
   return (
     <>
@@ -44,8 +44,8 @@ function Scene() {
         intensity={4}
       />
       {/* <Stage environment="city" intensity={1} /> */}
-      <Environment files="./sunset.hdr" background />
-      {/* <OrbitControls target={[0, 1, 0]} maxPolarAngle={[1.5]} /> */}
+      {/* <Environment files="./sunset.hdr" background /> */}
+      <OrbitControls target={[0, 1, 0]} maxPolarAngle={[1.5]} />
       <color args={[0x000000]} attach="background" />
       {/* <PerspectiveCamera makeDefault fov={50} position={[3, 2, 5]} /> */}
     </>
@@ -67,7 +67,7 @@ function Floor() {
 
   useFrame((state, delta) => {
     if (floorRef.current) {
-      floorRef.current.position.z += 1 / 100;
+      floorRef.current.position.z += -(1 / 500);
     }
   });
 
