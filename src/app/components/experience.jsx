@@ -1,6 +1,11 @@
 "use client";
 import { Canvas, useLoader, useFrame } from "@react-three/fiber";
-import { Environment, OrbitControls, useHelper } from "@react-three/drei";
+import {
+  Environment,
+  OrbitControls,
+  useHelper,
+  Stage,
+} from "@react-three/drei";
 import { Perf } from "r3f-perf";
 import {
   PerspectiveCamera,
@@ -38,7 +43,8 @@ function Scene() {
         ref={directionalLight}
         intensity={3}
       />
-      <Environment files="./sunset.hdr" background />
+      <Stage environment="city" intensity={1} />
+      {/* <Environment files="./sunset.hdr" background /> */}
       <OrbitControls target={[0, 1, 0]} maxPolarAngle={[1.5]} />
       <color args={[0x000000]} attach="background" />
       {/* <PerspectiveCamera makeDefault fov={50} position={[3, 2, 5]} /> */}
@@ -66,6 +72,7 @@ export default function Experience() {
         >
           <Scene />
           <AE86 />
+          <Floor />
           {/* 
           <axesHelper args={[10]} />
           <gridHelper args={[20, 10, 0xff0000, "grey"]} />
