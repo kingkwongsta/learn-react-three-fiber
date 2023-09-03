@@ -6,7 +6,7 @@ License: CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
 Source: https://sketchfab.com/3d-models/lamborghini-aventador-svj-sc20-carbon-edition-7c2ec7bcd5a94dc8a482b6a5773b5260
 Title: Lamborghini Aventador SVJ - SC20 CARBON EDITION
 */
-
+npx gltfjsx ./public/models/cars/ae86/scene.gltf
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 

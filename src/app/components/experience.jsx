@@ -27,25 +27,25 @@ function Scene() {
   const directionalLight = useRef();
   useHelper(pointLight, PointLightHelper, 0.5, "hotpink");
   useHelper(spotLight, SpotLightHelper, "teal");
-  useHelper(directionalLight, DirectionalLightHelper, 5, "blue");
+  useHelper(directionalLight, DirectionalLightHelper, 5, "teal");
 
-  useFrame((state, delta) => {
-    const angle = state.clock.getElapsedTime() / 10;
-    state.camera.position.x = Math.sin(angle) * 20;
-    state.camera.position.z = Math.cos(angle) * 20;
-    state.camera.lookAt(0, 0, 0);
-  });
+  // useFrame((state, delta) => {
+  //   const angle = state.clock.getElapsedTime() / 10;
+  //   state.camera.position.x = Math.sin(angle) * 20;
+  //   state.camera.position.z = Math.cos(angle) * 20;
+  //   state.camera.lookAt(0, 0, 0);
+  // });
 
   return (
     <>
       <directionalLight
-        position={[2, 5, 3]}
+        position={[5, 2, 2]}
         ref={directionalLight}
-        intensity={1}
+        intensity={4}
       />
-      <Stage environment="city" intensity={1} />
+      {/* <Stage environment="city" intensity={1} /> */}
       {/* <Environment files="./sunset.hdr" background /> */}
-      {/* <OrbitControls target={[0, 1, 0]} maxPolarAngle={[1.5]} /> */}
+      <OrbitControls target={[0, 1, 0]} maxPolarAngle={[1.5]} />
       <color args={[0x000000]} attach="background" />
       {/* <PerspectiveCamera makeDefault fov={50} position={[3, 2, 5]} /> */}
     </>
