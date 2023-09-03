@@ -1,0 +1,11 @@
+Model Information:
+* title:	Toyota AE86 Hachiroku
+* source:	https://sketchfab.com/3d-models/toyota-ae86-hachiroku-79878c7477f941a4ac4bb16c239bab9f
+* author:	DAS AUTO (https://sketchfab.com/das_auto)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Toyota AE86 Hachiroku" (https://sketchfab.com/3d-models/toyota-ae86-hachiroku-79878c7477f941a4ac4bb16c239bab9f) by DAS AUTO (https://sketchfab.com/das_auto) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
