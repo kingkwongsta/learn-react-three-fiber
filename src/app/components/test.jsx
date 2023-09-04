@@ -19,19 +19,11 @@ export default function Test() {
   return (
     <>
       <group ref={groupRef}>
-        <mesh position={[-3, 1, 0]} scale={1.5} ref={sphereRef}>
-          <sphereGeometry />
-          <meshStandardMaterial color="orange" wireframe />
-        </mesh>
-        <mesh position-x={3} ref={boxRef}>
-          <boxGeometry />
-          <meshStandardMaterial color="purple" />
+        <mesh ref={sphereRef}>
+          <sphereGeometry args={[1, 32, 32]} />
+          <meshStandardMaterial color="hotpink" />
         </mesh>
       </group>
-      <mesh rotation={[-Math.PI * 0.5, 0, 0]} position-y={-1} scale={10}>
-        <planeGeometry />
-        <meshStandardMaterial color="green" />
-      </mesh>
     </>
   );
 }

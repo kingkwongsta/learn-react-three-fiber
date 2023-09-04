@@ -134,8 +134,8 @@ export default function Experience() {
           }}
         >
           <Scene />
+          <Test />
           {/* <Rig> */}
-          <AE86 />
           {/* </Rig> */}
           {/* <Floor /> */}
           {/* 
