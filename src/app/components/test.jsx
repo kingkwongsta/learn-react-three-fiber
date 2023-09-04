@@ -8,6 +8,8 @@ export default function Test() {
   const boxRef = useRef();
   const groupRef = useRef();
 
+  const xPositions = [2, 4, 6, 8, 10];
+
   // useFrame((state, delta) => {
   //   groupRef.current.rotation.y += 0.001;
   //   sphereRef.current.rotation.y += 0.001;
@@ -16,14 +18,22 @@ export default function Test() {
   //   boxRef.current.rotation.y += 0.001;
   // });
 
-  return (
-    <>
-      <group ref={groupRef}>
-        <mesh ref={sphereRef}>
+  function Sphere({ xPosition }) {
+    return (
+      <>
+        <mesh position-x={xPosition}>
           <sphereGeometry args={[1, 32, 32]} />
           <meshStandardMaterial color="hotpink" />
         </mesh>
-      </group>
-    </>
-  );
+      </>
+    );
+  }
+
+  function renderSpheres() {
+    return xPositions.map((xPosition) => {
+      return <Sphere xPosition={xPosition} />;
+    });
+  }
+
+  return <></>;
 }
