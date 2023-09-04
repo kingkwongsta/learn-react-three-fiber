@@ -16,13 +16,20 @@ export default function Test() {
   //   boxRef.current.rotation.y += 0.001;
   // });
 
-  //function to create an array of x positions - 10 positions with 2 units between each
-  function createXPositions() {
-    let xPositions = [];
+  function createPositions() {
+    let positions = [];
+
     for (let i = 0; i < 10; i++) {
-      xPositions.push(i * 2);
+      let object = {
+        x: Math.random() * 14 + 1,
+        y: Math.random() * 14 + 1,
+        z: Math.random() * 14 + 1,
+      };
+
+      positions.push(object);
     }
-    return xPositions;
+
+    return positions;
   }
 
   function Sphere({ xPosition }) {
@@ -37,7 +44,7 @@ export default function Test() {
   }
 
   function renderSpheres() {
-    return createXPositions().map((xPosition, index) => {
+    return createPositions().map((xPosition, index) => {
       return <Sphere xPosition={xPosition} key={index} />;
     });
   }
