@@ -48,7 +48,7 @@ function Scene() {
       />
       {/* <Stage environment="city" intensity={1} /> */}
       <Environment files="./sunset.hdr" background />
-      {/* <OrbitControls target={[0, 1, 0]} maxPolarAngle={[1.5]} /> */}
+      <OrbitControls target={[0, 1, 0]} maxPolarAngle={[1.5]} />
       <color args={[0x000000]} attach="background" />
       {/* <PerspectiveCamera makeDefault fov={50} position={[3, 2, 5]} /> */}
     </>
@@ -57,26 +57,26 @@ function Scene() {
 
 //cool camera movement rig
 
-function Rig({ children }) {
-  const outer = useRef();
-  const inner = useRef();
-  useFrame(({ camera, clock }) => {
-    const t = clock.getElapsedTime();
-    outer.current.position.y = THREE.MathUtils.lerp(
-      outer.current.position.y,
-      0,
-      0.05
-    );
-    inner.current.rotation.y = Math.sin(t / 8) * Math.PI;
-    inner.current.position.z = 5 + -Math.sin(t / 2) * 20;
-    inner.current.position.y = -5 + Math.sin(t / 2) * 2;
-  });
-  return (
-    <group position={[0, -100, 0]} ref={outer}>
-      <group ref={inner}>{children}</group>
-    </group>
-  );
-}
+// function Rig({ children }) {
+//   const outer = useRef();
+//   const inner = useRef();
+//   useFrame(({ camera, clock }) => {
+//     const t = clock.getElapsedTime();
+//     outer.current.position.y = THREE.MathUtils.lerp(
+//       outer.current.position.y,
+//       0,
+//       0.05
+//     );
+//     inner.current.rotation.y = Math.sin(t / 8) * Math.PI;
+//     inner.current.position.z = 5 + -Math.sin(t / 2) * 20;
+//     inner.current.position.y = -5 + Math.sin(t / 2) * 2;
+//   });
+//   return (
+//     <group position={[0, -100, 0]} ref={outer}>
+//       <group ref={inner}>{children}</group>
+//     </group>
+//   );
+// }
 
 function Floor() {
   const [roughness, normal] = useLoader(TextureLoader, [
@@ -134,9 +134,9 @@ export default function Experience() {
           }}
         >
           <Scene />
-          <Rig>
-            <AE86 />
-          </Rig>
+          {/* <Rig> */}
+          <AE86 />
+          {/* </Rig> */}
           {/* <Floor /> */}
           {/* 
           <axesHelper args={[10]} />

@@ -8,13 +8,13 @@ export default function Test() {
   const boxRef = useRef();
   const groupRef = useRef();
 
-  useFrame((state, delta) => {
-    groupRef.current.rotation.y += 0.001;
-    sphereRef.current.rotation.y += 0.001;
-    sphereRef.current.rotation.y += 0.001;
-    boxRef.current.rotation.x += 0.001;
-    boxRef.current.rotation.y += 0.001;
-  });
+  // useFrame((state, delta) => {
+  //   groupRef.current.rotation.y += 0.001;
+  //   sphereRef.current.rotation.y += 0.001;
+  //   sphereRef.current.rotation.y += 0.001;
+  //   boxRef.current.rotation.x += 0.001;
+  //   boxRef.current.rotation.y += 0.001;
+  // });
 
   return (
     <>
