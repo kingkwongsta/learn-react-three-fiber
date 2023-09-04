@@ -8,8 +8,6 @@ export default function Test() {
   const boxRef = useRef();
   const groupRef = useRef();
 
-  const xPositions = [2, 4, 6, 8, 10];
-
   // useFrame((state, delta) => {
   //   groupRef.current.rotation.y += 0.001;
   //   sphereRef.current.rotation.y += 0.001;
@@ -17,6 +15,15 @@ export default function Test() {
   //   boxRef.current.rotation.x += 0.001;
   //   boxRef.current.rotation.y += 0.001;
   // });
+
+  //function to create an array of x positions - 10 positions with 2 units between each
+  function createXPositions() {
+    let xPositions = [];
+    for (let i = 0; i < 10; i++) {
+      xPositions.push(i * 2);
+    }
+    return xPositions;
+  }
 
   function Sphere({ xPosition }) {
     return (
@@ -30,7 +37,7 @@ export default function Test() {
   }
 
   function renderSpheres() {
-    return xPositions.map((xPosition) => {
+    return createXPositions().map((xPosition) => {
       return <Sphere xPosition={xPosition} />;
     });
   }
