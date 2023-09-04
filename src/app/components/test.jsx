@@ -19,23 +19,22 @@ export default function Test() {
   function createPositions() {
     let positions = [];
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 30; i++) {
       let object = {
-        x: Math.random() * 14 + 1,
-        y: Math.random() * 14 + 1,
-        z: Math.random() * 14 + 1,
+        x: Math.random() * 9 + 1,
+        y: Math.random() * 20 + 1,
+        z: Math.random() * 9 + 1,
       };
-
       positions.push(object);
     }
-
+    console.log(positions);
     return positions;
   }
 
-  function Sphere({ xPosition }) {
+  function Sphere({ x, y, z }) {
     return (
       <>
-        <mesh position-x={xPosition}>
+        <mesh position={(x, y, z)}>
           <sphereGeometry args={[0.5, 32, 32]} />
           <meshStandardMaterial color="hotpink" />
         </mesh>
@@ -44,8 +43,10 @@ export default function Test() {
   }
 
   function renderSpheres() {
-    return createPositions().map((xPosition, index) => {
-      return <Sphere xPosition={xPosition} key={index} />;
+    return createPositions().map((positions, index) => {
+      return (
+        <Sphere x={positions.x} y={positions.y} z={positions.z} key={index} />
+      );
     });
   }
 
