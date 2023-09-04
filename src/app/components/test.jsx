@@ -22,7 +22,7 @@ export default function Test() {
     return (
       <>
         <mesh position-x={xPosition}>
-          <sphereGeometry args={[1, 32, 32]} />
+          <sphereGeometry args={[0.5, 32, 32]} />
           <meshStandardMaterial color="hotpink" />
         </mesh>
       </>
@@ -35,5 +35,5 @@ export default function Test() {
     });
   }
 
-  return <></>;
+  return <>{renderSpheres()}</>;
 }
