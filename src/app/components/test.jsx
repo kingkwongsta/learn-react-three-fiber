@@ -37,8 +37,8 @@ export default function Test() {
   }
 
   function renderSpheres() {
-    return createXPositions().map((xPosition) => {
-      return <Sphere xPosition={xPosition} />;
+    return createXPositions().map((xPosition, index) => {
+      return <Sphere xPosition={xPosition} key={index} />;
     });
   }
 
