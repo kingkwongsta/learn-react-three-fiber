@@ -3,6 +3,7 @@ import {
   PerspectiveCamera,
   TransformControls,
   PivotControls,
+  Html,
 } from "@react-three/drei";
 import { useRef, state } from "react";
 import { Mesh } from "three";
@@ -52,6 +53,9 @@ export default function Test() {
         <mesh ref={sphereRef}>
           <boxGeometry />
           <meshStandardMaterial color="hotpink" />
+          <Html distanceFactor={8}>
+            <h1>Test</h1>
+          </Html>
         </mesh>
       </PivotControls>
       {/* <TransformControls object={sphereRef} mode="scale" />
