@@ -1,5 +1,5 @@
 import { Canvas, useFrame } from "@react-three/fiber";
-import { PerspectiveCamera } from "@react-three/drei";
+import { PerspectiveCamera, TransformControls } from "@react-three/drei";
 import { useRef, state } from "react";
 import { Mesh } from "three";
 
@@ -44,10 +44,11 @@ export default function Test() {
 
   return (
     <>
-      <mesh>
+      <mesh ref={sphereRef}>
         <sphereGeometry />
         <meshStandardMaterial color="hotpink" />
       </mesh>
+      <TransformControls object={sphereRef} />
     </>
   );
 }

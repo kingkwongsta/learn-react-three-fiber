@@ -134,9 +134,7 @@ export default function Experience() {
           }}
         >
           <Scene />
-          <TransformControls>
-            <Test />
-          </TransformControls>
+          <Test />
 
           {/* <Rig> */}
           {/* </Rig> */}
