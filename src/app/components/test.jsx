@@ -1,5 +1,9 @@
 import { Canvas, useFrame } from "@react-three/fiber";
-import { PerspectiveCamera, TransformControls } from "@react-three/drei";
+import {
+  PerspectiveCamera,
+  TransformControls,
+  PivotControls,
+} from "@react-three/drei";
 import { useRef, state } from "react";
 import { Mesh } from "three";
 
@@ -44,12 +48,14 @@ export default function Test() {
 
   return (
     <>
-      <mesh ref={sphereRef}>
-        <sphereGeometry />
-        <meshStandardMaterial color="hotpink" />
-      </mesh>
-      <TransformControls object={sphereRef} mode="scale" />
-      <TransformControls object={sphereRef} mode="rotate" />
+      <PivotControls anchor={[1, 0, 0]}>
+        <mesh ref={sphereRef}>
+          <boxGeometry />
+          <meshStandardMaterial color="hotpink" />
+        </mesh>
+      </PivotControls>
+      {/* <TransformControls object={sphereRef} mode="scale" />
+      <TransformControls object={sphereRef} mode="rotate" /> */}
     </>
   );
 }
