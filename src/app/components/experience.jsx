@@ -3,6 +3,7 @@ import { Canvas, useLoader, useFrame } from "@react-three/fiber";
 import {
   Environment,
   OrbitControls,
+  TransformControls,
   useHelper,
   Stage,
   MeshReflectorMaterial,
@@ -133,6 +134,10 @@ export default function Experience() {
           }}
         >
           <Scene />
+          <TransformControls>
+            <Test />
+          </TransformControls>
+
           {/* <Rig> */}
           {/* </Rig> */}
           {/* <Floor /> */}

@@ -44,7 +44,10 @@ export default function Test() {
 
   return (
     <>
-      <mesh></mesh>
+      <mesh>
+        <sphereGeometry />
+        <meshStandardMaterial color="hotpink" />
+      </mesh>
     </>
   );
 }
