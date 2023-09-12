@@ -56,7 +56,6 @@ function Scene() {
 }
 
 //cool camera movement rig
-
 // function Rig({ children }) {
 //   const outer = useRef();
 //   const inner = useRef();
@@ -134,7 +133,6 @@ export default function Experience() {
           }}
         >
           <Scene />
-          <Test />
           {/* <Rig> */}
           {/* </Rig> */}
           {/* <Floor /> */}

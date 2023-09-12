@@ -16,39 +16,35 @@ export default function Test() {
   //   boxRef.current.rotation.y += 0.001;
   // });
 
-  function createPositions() {
-    let positions = [];
+  // function createPositions() {
+  //   let positions = [];
 
-    for (let i = 0; i < 30; i++) {
-      let object = {
-        x: Math.random() * 9 + 1,
-        y: Math.random() * 20 + 1,
-        z: Math.random() * 9 + 1,
-      };
-      positions.push(object);
-    }
-    console.log(positions);
-    return positions;
-  }
+  //   for (let i = 0; i < 30; i++) {
+  //     let object = {
+  //       x: Math.random() * 9 + 1,
+  //       y: Math.random() * 20 + 1,
+  //       z: Math.random() * 9 + 1,
+  //     };
+  //     positions.push(object);
+  //   }
+  //   console.log(positions);
+  //   return positions;
+  // }
 
-  function Sphere({ x, y, z }) {
-    return (
-      <>
-        <mesh position={(x, y, z)}>
-          <sphereGeometry args={[0.5, 32, 32]} />
-          <meshStandardMaterial color="hotpink" />
-        </mesh>
-      </>
-    );
-  }
+  // function Sphere({ x, y, z }) {
+  //   return (
+  //     <>
+  //       <mesh position={(x, y, z)}>
+  //         <sphereGeometry args={[0.5, 32, 32]} />
+  //         <meshStandardMaterial color="hotpink" />
+  //       </mesh>
+  //     </>
+  //   );
+  // }
 
-  function renderSpheres() {
-    return createPositions().map((positions, index) => {
-      return (
-        <Sphere x={positions.x} y={positions.y} z={positions.z} key={index} />
-      );
-    });
-  }
-
-  return <>{renderSpheres()}</>;
+  return (
+    <>
+      <mesh></mesh>
+    </>
+  );
 }
