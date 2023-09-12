@@ -49,7 +49,7 @@ function Scene() {
       />
       {/* <Stage environment="city" intensity={1} /> */}
       <Environment files="./sunset.hdr" background />
-      <OrbitControls target={[0, 1, 0]} maxPolarAngle={[1.5]} />
+      <OrbitControls target={[0, 1, 0]} maxPolarAngle={[1.5]} makeDefault />
       <color args={[0x000000]} attach="background" />
       {/* <PerspectiveCamera makeDefault fov={50} position={[3, 2, 5]} /> */}
     </>

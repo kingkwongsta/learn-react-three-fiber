@@ -48,7 +48,8 @@ export default function Test() {
         <sphereGeometry />
         <meshStandardMaterial color="hotpink" />
       </mesh>
-      <TransformControls object={sphereRef} />
+      <TransformControls object={sphereRef} mode="scale" />
+      <TransformControls object={sphereRef} mode="rotate" />
     </>
   );
 }
