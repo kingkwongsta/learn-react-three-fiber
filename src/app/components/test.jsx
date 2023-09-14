@@ -5,6 +5,7 @@ import {
   PivotControls,
   Html,
   Text,
+  Text3D,
 } from "@react-three/drei";
 import { useRef, state } from "react";
 import { Mesh } from "three";
@@ -59,7 +60,9 @@ export default function Test() {
           </Html>
         </mesh>
       </PivotControls>
-      <Text>Hello World</Text>
+      <Text font="./SuperMarioBros.woff" color="blue">
+        Hello World
+      </Text>
       {/* <TransformControls object={sphereRef} mode="scale" />
       <TransformControls object={sphereRef} mode="rotate" /> */}
     </>
