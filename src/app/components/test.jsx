@@ -6,6 +6,7 @@ import {
   Html,
   Text,
   Text3D,
+  MeshReflectorMaterial,
 } from "@react-three/drei";
 import { useRef, state } from "react";
 import { Mesh } from "three";
@@ -60,11 +61,17 @@ export default function Test() {
           </Html>
         </mesh>
       </PivotControls>
-      <Text font="./SuperMarioBros.woff" color="blue">
-        Hello World
-      </Text>
-      {/* <TransformControls object={sphereRef} mode="scale" />
+      <PivotControls>
+        <Text font="./SuperMarioBros.woff" color="blue">
+          Hello World
+          <meshNormalMaterial />
+        </Text>
+        {/* <TransformControls object={sphereRef} mode="scale" />
       <TransformControls object={sphereRef} mode="rotate" /> */}
+      </PivotControls>
+      <mesh rotation-x={-Math.PI * 0.5} position-y={-5}>
+        <planeGeometry args={[100, 100]} />
+      </mesh>
     </>
   );
 }
