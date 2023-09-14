@@ -58,9 +58,6 @@ export default function Test() {
     <>
       {/* <Perf position="top-left" /> */}
 
-      <directionalLight position={[1, 2, 3]} intensity={1.5} />
-      <ambientLight intensity={0.5} />
-
       <mesh position-x={-2}>
         <sphereGeometry />
         <meshStandardMaterial color="orange" />
