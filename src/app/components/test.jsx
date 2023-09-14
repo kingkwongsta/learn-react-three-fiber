@@ -58,17 +58,22 @@ export default function Test() {
     <>
       {/* <Perf position="top-left" /> */}
 
-      <mesh position-x={-2}>
+      <mesh castShadow position-x={-2}>
         <sphereGeometry />
         <meshStandardMaterial color="orange" />
       </mesh>
 
-      <mesh ref={boxRef} position-x={2} scale={1.5}>
+      <mesh castShadow ref={boxRef} position-x={2} scale={1.5}>
         <boxGeometry />
         <meshStandardMaterial color="mediumpurple" />
       </mesh>
 
-      <mesh position-y={-1} rotation-x={-Math.PI * 0.5} scale={10}>
+      <mesh
+        receiveShadow
+        position-y={-1}
+        rotation-x={-Math.PI * 0.5}
+        scale={10}
+      >
         <planeGeometry />
         <meshStandardMaterial color="greenyellow" />
       </mesh>

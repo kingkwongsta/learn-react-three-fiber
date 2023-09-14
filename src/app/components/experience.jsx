@@ -42,7 +42,7 @@ function Scene() {
 
   return (
     <>
-      <directionalLight position={[1, 2, 3]} intensity={1.5} />
+      <directionalLight castShadow position={[1, 2, 3]} intensity={1.5} />
       <ambientLight intensity={0.5} />
       {/* <Stage environment="city" intensity={1} /> */}
       {/* <Environment files="./sunset.hdr" background /> */}
