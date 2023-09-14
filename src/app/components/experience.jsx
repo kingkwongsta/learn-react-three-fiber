@@ -7,6 +7,7 @@ import {
   useHelper,
   Stage,
   MeshReflectorMaterial,
+  BakeShadows,
 } from "@react-three/drei";
 import { Perf } from "r3f-perf";
 import {
@@ -42,8 +43,13 @@ function Scene() {
 
   return (
     <>
-      <directionalLight castShadow position={[1, 2, 3]} intensity={1.5} />
-      <ambientLight intensity={0.5} />
+      <directionalLight
+        castShadow
+        shadow-mapSize={[2048, 2048]}
+        position={[1, 2, 3]}
+        intensity={1.5}
+      />
+      <ambientLight intensity={1.2} />
       {/* <Stage environment="city" intensity={1} /> */}
       {/* <Environment files="./sunset.hdr" background /> */}
       <OrbitControls target={[0, 1, 0]} maxPolarAngle={[1.5]} makeDefault />
