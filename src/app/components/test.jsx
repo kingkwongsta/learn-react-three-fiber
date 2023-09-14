@@ -53,7 +53,7 @@ export default function Test() {
   return (
     <>
       <PivotControls anchor={[1, 0, 0]}>
-        <mesh ref={sphereRef}>
+        <mesh ref={sphereRef} scale={2}>
           <boxGeometry />
           <meshStandardMaterial color="hotpink" />
           <Html distanceFactor={8}>
@@ -69,8 +69,9 @@ export default function Test() {
         {/* <TransformControls object={sphereRef} mode="scale" />
       <TransformControls object={sphereRef} mode="rotate" /> */}
       </PivotControls>
-      <mesh rotation-x={-Math.PI * 0.5} position-y={-5}>
-        <planeGeometry args={[100, 100]} />
+      <mesh rotation-x={-Math.PI * 0.5} position-y={-2}>
+        <planeGeometry args={[50, 50]} />
+        <MeshReflectorMaterial resolution={512} color="greenyellow" />
       </mesh>
     </>
   );
