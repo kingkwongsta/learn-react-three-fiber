@@ -50,29 +50,19 @@ export default function Test() {
   //   );
   // }
 
-  useFrame((state, delta) => {
-    boxRef.current.rotation.y += delta * 0.2;
-  });
+  // useFrame((state, delta) => {
+  //   boxRef.current.rotation.y += delta * 0.2;
+  // });
 
   return (
     <>
       {/* <Perf position="top-left" /> */}
 
-      <mesh castShadow position-x={-2}>
-        <sphereGeometry />
-        <meshStandardMaterial color="orange" />
-      </mesh>
-
-      <mesh castShadow ref={boxRef} position-x={2} scale={1.5}>
-        <boxGeometry />
-        <meshStandardMaterial color="mediumpurple" />
-      </mesh>
-
       <mesh
         receiveShadow
         position-y={-1}
         rotation-x={-Math.PI * 0.5}
-        scale={10}
+        scale={100}
       >
         <planeGeometry />
         <meshStandardMaterial color="greenyellow" />
