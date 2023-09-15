@@ -1,4 +1,4 @@
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import {
   PerspectiveCamera,
   TransformControls,
@@ -10,19 +10,13 @@ import {
 } from "@react-three/drei";
 import { useRef, state } from "react";
 import { Mesh } from "three";
+import { useGLTF } from "@react-three/drei";
+import Hamburger from "./hamburger";
 
 export default function Test() {
   const sphereRef = useRef();
   const boxRef = useRef();
   const groupRef = useRef();
-
-  // useFrame((state, delta) => {
-  //   groupRef.current.rotation.y += 0.001;
-  //   sphereRef.current.rotation.y += 0.001;
-  //   sphereRef.current.rotation.y += 0.001;
-  //   boxRef.current.rotation.x += 0.001;
-  //   boxRef.current.rotation.y += 0.001;
-  // });
 
   // function createPositions() {
   //   let positions = [];
@@ -57,7 +51,7 @@ export default function Test() {
   return (
     <>
       {/* <Perf position="top-left" /> */}
-
+      <Hamburger />
       <mesh
         receiveShadow
         position-y={-1}
