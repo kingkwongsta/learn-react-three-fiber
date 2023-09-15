@@ -7,15 +7,15 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
-export default function Model({ ref }) {
+export default function Model({ testing }) {
   const { nodes, materials } = useGLTF("/hamburger-draco.glb");
 
-  // useFrame((state, delta) => {
-  //   console.log(ref);
-  // });
+  useFrame((state, delta) => {
+    // console.log(testing);
+  });
 
   return (
-    <group ref={ref}>
+    <group>
       <group dispose={null}>
         <mesh
           geometry={nodes.bottomBun.geometry}

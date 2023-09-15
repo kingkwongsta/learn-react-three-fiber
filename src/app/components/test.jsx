@@ -10,7 +10,7 @@ import {
 } from "@react-three/drei";
 import { useRef, state } from "react";
 import { Mesh } from "three";
-import { useGLTF } from "@react-three/drei";
+import { useGLTF, Float } from "@react-three/drei";
 import Hamburger from "./hamburger";
 
 export default function Test() {
@@ -51,7 +51,9 @@ export default function Test() {
   return (
     <>
       {/* <Perf position="top-left" /> */}
-      <Hamburger />
+      <Float>
+        <Hamburger testing={"Hello"} />
+      </Float>
       <mesh
         receiveShadow
         position-y={-1}
