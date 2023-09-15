@@ -44,9 +44,9 @@ export default function Test() {
   //   );
   // }
 
-  // useFrame((state, delta) => {
-  //   boxRef.current.rotation.y += delta * 0.2;
-  // });
+  useFrame((state, delta) => {
+    // console.log(sphereRef);
+  });
 
   return (
     <>
@@ -58,7 +58,7 @@ export default function Test() {
         rotation-x={-Math.PI * 0.5}
         scale={100}
       >
-        <planeGeometry />
+        <planeGeometry ref={sphereRef} />
         <meshStandardMaterial color="greenyellow" />
       </mesh>
     </>

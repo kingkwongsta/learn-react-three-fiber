@@ -5,30 +5,38 @@ Command: npx gltfjsx@6.2.12 hamburger-draco.glb
 
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
 
-export default function Model(props) {
+export default function Model({ ref }) {
   const { nodes, materials } = useGLTF("/hamburger-draco.glb");
+
+  // useFrame((state, delta) => {
+  //   console.log(ref);
+  // });
+
   return (
-    <group {...props} dispose={null}>
-      <mesh
-        geometry={nodes.bottomBun.geometry}
-        material={materials.BunMaterial}
-      />
-      <mesh
-        geometry={nodes.meat.geometry}
-        material={materials.SteakMaterial}
-        position={[0, 2.817, 0]}
-      />
-      <mesh
-        geometry={nodes.cheese.geometry}
-        material={materials.CheeseMaterial}
-        position={[0, 3.04, 0]}
-      />
-      <mesh
-        geometry={nodes.topBun.geometry}
-        material={materials.BunMaterial}
-        position={[0, 1.771, 0]}
-      />
+    <group ref={ref}>
+      <group dispose={null}>
+        <mesh
+          geometry={nodes.bottomBun.geometry}
+          material={materials.BunMaterial}
+        />
+        <mesh
+          geometry={nodes.meat.geometry}
+          material={materials.SteakMaterial}
+          position={[0, 2.817, 0]}
+        />
+        <mesh
+          geometry={nodes.cheese.geometry}
+          material={materials.CheeseMaterial}
+          position={[0, 3.04, 0]}
+        />
+        <mesh
+          geometry={nodes.topBun.geometry}
+          material={materials.BunMaterial}
+          position={[0, 1.771, 0]}
+        />
+      </group>
     </group>
   );
 }
