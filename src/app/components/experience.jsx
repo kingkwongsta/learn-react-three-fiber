@@ -21,7 +21,7 @@ import {
 import { useRef } from "react";
 import Rings from "./Rings";
 import Test from "./test";
-import AE86 from "./ae86";
+import AE86 from "./models/ae86";
 import CustomGeo from "./customgeo";
 import * as THREE from "three";
 
@@ -95,7 +95,7 @@ export default function Experience() {
           }}
         >
           <Scene />
-          <Test />
+          <AE86 />
 
           {/* <Rig> */}
           {/* </Rig> */}
