@@ -22,6 +22,7 @@ import { useRef, Suspense } from "react";
 import Floor from "./floor";
 import Test from "./test";
 import AE86 from "./models/ae86";
+import Fox from "./models/fox";
 import CustomGeo from "./customgeo";
 import * as THREE from "three";
 
@@ -105,7 +106,7 @@ export default function Experience() {
         >
           <Scene />
           <Suspense fallback={<FallbackOption />}>
-            <AE86 />
+            <Fox />
           </Suspense>
 
           {/* <Rig> */}
