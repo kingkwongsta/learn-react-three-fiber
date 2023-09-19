@@ -10,7 +10,7 @@ export default function Fox(props) {
   const { nodes, materials, animations } = useGLTF("/models/Fox.gltf");
   const { actions } = useAnimations(animations, group);
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group ref={group} {...props} dispose={null} scale={0.05}>
       <group>
         <group name="root">
           <skinnedMesh
