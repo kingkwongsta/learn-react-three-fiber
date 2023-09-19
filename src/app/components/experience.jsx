@@ -18,7 +18,7 @@ import {
   TextureLoader,
   MathUtils,
 } from "three";
-import { useRef } from "react";
+import { useRef, Suspense } from "react";
 import Floor from "./floor";
 import Test from "./test";
 import AE86 from "./models/ae86";
@@ -95,7 +95,9 @@ export default function Experience() {
           }}
         >
           <Scene />
-          <AE86 />
+          <Suspense>
+            <AE86 />
+          </Suspense>
 
           {/* <Rig> */}
           {/* </Rig> */}
