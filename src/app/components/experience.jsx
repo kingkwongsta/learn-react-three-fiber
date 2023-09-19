@@ -19,7 +19,7 @@ import {
   MathUtils,
 } from "three";
 import { useRef } from "react";
-import Rings from "./Rings";
+import Floor from "./floor";
 import Test from "./test";
 import AE86 from "./models/ae86";
 import CustomGeo from "./customgeo";
@@ -99,7 +99,7 @@ export default function Experience() {
 
           {/* <Rig> */}
           {/* </Rig> */}
-          {/* <Floor /> */}
+          <Floor />
           {/* 
           <axesHelper args={[10]} />
           <gridHelper args={[20, 10, 0xff0000, "grey"]} />

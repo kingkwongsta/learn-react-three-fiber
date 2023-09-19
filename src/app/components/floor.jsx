@@ -11,12 +11,6 @@ export default function Floor() {
 
   const floorRef = useRef();
 
-  useFrame((state, delta) => {
-    if (floorRef.current) {
-      floorRef.current.position.x += 1;
-    }
-  });
-  z;
   return (
     <mesh rotation-x={-Math.PI * 0.5} castShadow receiveShadow>
       <planeGeometry args={[30, 30]} ref={floorRef} />

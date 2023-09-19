@@ -11,7 +11,7 @@ import {
 import { useRef, state } from "react";
 import { Mesh } from "three";
 import { useGLTF, Float } from "@react-three/drei";
-import Hamburger from "./hamburger";
+import Hamburger from "./models/hamburger";
 
 export default function Test() {
   const sphereRef = useRef();
