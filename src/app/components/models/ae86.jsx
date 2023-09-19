@@ -13,7 +13,14 @@ import { useGLTF } from "@react-three/drei";
 export default function AE86(props) {
   const { nodes, materials } = useGLTF("/models/cars/ae86/scene.gltf");
   return (
-    <group {...props} dispose={null} scale={2} castShadow receiveShadow>
+    <group
+      {...props}
+      dispose={null}
+      scale={2}
+      position-y={-0.15}
+      castShadow
+      receiveShadow
+    >
       <mesh
         geometry={nodes.Object_4.geometry}
         material={materials.INT_rubber}
