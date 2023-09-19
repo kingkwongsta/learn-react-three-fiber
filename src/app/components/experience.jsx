@@ -81,6 +81,15 @@ function Scene() {
 //   );
 // }
 
+function FallbackOption() {
+  return (
+    <mesh scale={[3, 2, 2]}>
+      <boxGeometry args={[2, 1, 1, 2, 2, 2]} />
+      <meshBasicMaterial wireframe color={"white"} />
+    </mesh>
+  );
+}
+
 export default function Experience() {
   return (
     <>
@@ -96,6 +105,8 @@ export default function Experience() {
         >
           <Scene />
           <Suspense>
+            fallback=
+            {<FallbackOption />}
             <AE86 />
           </Suspense>
 
