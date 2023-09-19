@@ -106,7 +106,7 @@ export default function Experience() {
         >
           <Scene />
           <Suspense fallback={<FallbackOption />}>
-            <Fox />
+            <Fox scale={0.05} />
           </Suspense>
 
           {/* <Rig> */}
