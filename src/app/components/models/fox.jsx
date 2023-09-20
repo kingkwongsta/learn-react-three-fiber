@@ -8,41 +8,45 @@ import { useControls } from "leva";
 
 export default function Fox(props) {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF("/models/Fox.gltf");
-  const { actions } = useAnimations(animations, group);
+  // const { nodes, materials, animations } = useGLTF("/models/Fox.gltf");
+  // const { actions } = useAnimations(animations, group);
+
+  const fox = useGLTF("/models/Fox.gltf");
+  const animations = useAnimations(fox.animations, fox.scene);
 
   const { animationName } = useControls({
-    animationName: { options: actions.names },
+    animationName: { options: ["walk"] },
   });
 
-  useEffect(() => {
-    actions.Survey.play();
+  // useEffect(() => {
+  //   actions.Survey.play();
 
-    window.setTimeout(() => {
-      actions.Walk.play();
-      actions.Walk.crossFadeFrom(actions.Survey, 2);
-    }, 2000);
+  //   window.setTimeout(() => {
+  //     actions.Walk.play();
+  //     actions.Walk.crossFadeFrom(actions.Survey, 2);
+  //   }, 2000);
 
-    window.setTimeout(() => {
-      actions.Run.play();
-      actions.Run.crossFadeFrom(actions.Walk, 2);
-    }, 4000);
-  }, []);
+  //   window.setTimeout(() => {
+  //     actions.Run.play();
+  //     actions.Run.crossFadeFrom(actions.Walk, 2);
+  //   }, 4000);
+  // }, []);
 
   return (
-    <group ref={group} {...props} dispose={null}>
-      <group>
-        <group name="root">
-          <skinnedMesh
-            name="fox"
-            geometry={nodes.fox.geometry}
-            material={materials.fox_material}
-            skeleton={nodes.fox.skeleton}
-          />
-          <primitive object={nodes._rootJoint} />
-        </group>
-      </group>
-    </group>
+    <></>
+    // <group ref={group} {...props} dispose={null}>
+    //   <group>
+    //     <group name="root">
+    //       <skinnedMesh
+    //         name="fox"
+    //         geometry={nodes.fox.geometry}
+    //         material={materials.fox_material}
+    //         skeleton={nodes.fox.skeleton}
+    //       />
+    //       <primitive object={nodes._rootJoint} />
+    //     </group>
+    //   </group>
+    // </group>
   );
 }
 
