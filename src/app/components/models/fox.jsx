@@ -8,11 +8,14 @@ import { useControls } from "leva";
 
 export default function Fox(props) {
   const group = useRef();
-  // const { nodes, materials, animations } = useGLTF("/models/Fox.gltf");
-  // const { actions } = useAnimations(animations, group);
+  const { nodes, materials, animations } = useGLTF("/models/Fox.gltf");
+  const { actions } = useAnimations(animations, group);
 
-  const fox = useGLTF("/models/Fox.gltf");
-  const animations = useAnimations(fox.animations, fox.scene);
+  // const fox = useGLTF("/models/Fox.gltf");
+  // const animations = useAnimations(fox.animations, fox.scene);
+
+  console.log(animations);
+  console.log(actions);
 
   const { animationName } = useControls({
     animationName: { options: ["walk"] },
