@@ -16,35 +16,41 @@ export default function Fox(props) {
     animationName: { options: animations.names },
   });
 
-  // useEffect(() => {
-  //   actions.Survey.play();
+  useEffect(() => {
+    const action = animations.actions[animationName];
+    action.reset().fadeIn(0.5).play();
 
-  //   window.setTimeout(() => {
-  //     actions.Walk.play();
-  //     actions.Walk.crossFadeFrom(actions.Survey, 2);
-  //   }, 2000);
+    console.log(animationName);
 
-  //   window.setTimeout(() => {
-  //     actions.Run.play();
-  //     actions.Run.crossFadeFrom(actions.Walk, 2);
-  //   }, 4000);
-  // }, []);
+    return () => {
+      action.fadeOut(0.5);
+    };
+  }, [animationName]);
 
   return (
-    <group ref={group} {...props} dispose={null}>
-      <group>
-        <group name="root">
-          <skinnedMesh
-            name="fox"
-            geometry={fox.nodes.fox.geometry}
-            material={fox.materials.fox_material}
-            skeleton={fox.nodes.fox.skeleton}
-          />
-          <primitive object={fox.nodes._rootJoint} />
-        </group>
-      </group>
-    </group>
+    <primitive
+      object={fox.scene}
+      scale={0.02}
+      position={[-2.5, 0, 2.5]}
+      rotation-y={0.3}
+    />
   );
+
+  // return (
+  //   <group ref={group} {...props} dispose={null}>
+  //     <group>
+  //       <group name="root">
+  //         <skinnedMesh
+  //           name="fox"
+  //           geometry={fox.nodes.fox.geometry}
+  //           material={fox.materials.fox_material}
+  //           skeleton={fox.nodes.fox.skeleton}
+  //         />
+  //         <primitive object={fox.nodes._rootJoint} />
+  //       </group>
+  //     </group>
+  //   </group>
+  // );
 }
 
 useGLTF.preload("/Fox.gltf");
