@@ -11,11 +11,11 @@ export default function Fox(props) {
   const { nodes, materials, animations } = useGLTF("/models/Fox.gltf");
   const { actions } = useAnimations(animations, group);
 
-  // const fox = useGLTF("/models/Fox.gltf");
+  const fox = useGLTF("/models/Fox.gltf");
   // const animations = useAnimations(fox.animations, fox.scene);
 
   console.log(animations);
-  console.log(actions);
+  console.log(fox);
 
   const { animationName } = useControls({
     animationName: { options: ["walk"] },
