@@ -9,7 +9,7 @@ import { useControls } from "leva";
 export default function Fox(props) {
   const group = useRef();
 
-  const fox = useGLTF("/models/Fox.gltf");
+  const fox = useGLTF("/Fox.gltf");
   const animations = useAnimations(fox.animations, fox.scene);
 
   const { animationName } = useControls({
@@ -31,20 +31,19 @@ export default function Fox(props) {
   // }, []);
 
   return (
-    <></>
-    // <group ref={group} {...props} dispose={null}>
-    //   <group>
-    //     <group name="root">
-    //       <skinnedMesh
-    //         name="fox"
-    //         geometry={nodes.fox.geometry}
-    //         material={materials.fox_material}
-    //         skeleton={nodes.fox.skeleton}
-    //       />
-    //       <primitive object={nodes._rootJoint} />
-    //     </group>
-    //   </group>
-    // </group>
+    <group ref={group} {...props} dispose={null}>
+      <group>
+        <group name="root">
+          <skinnedMesh
+            name="fox"
+            geometry={fox.nodes.fox.geometry}
+            material={fox.materials.fox_material}
+            skeleton={fox.nodes.fox.skeleton}
+          />
+          <primitive object={fox.nodes._rootJoint} />
+        </group>
+      </group>
+    </group>
   );
 }
 
