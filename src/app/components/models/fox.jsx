@@ -8,17 +8,12 @@ import { useControls } from "leva";
 
 export default function Fox(props) {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF("/models/Fox.gltf");
-  const { actions } = useAnimations(animations, group);
 
   const fox = useGLTF("/models/Fox.gltf");
-  // const animations = useAnimations(fox.animations, fox.scene);
-
-  console.log(animations);
-  console.log(fox);
+  const animations = useAnimations(fox.animations, fox.scene);
 
   const { animationName } = useControls({
-    animationName: { options: ["walk"] },
+    animationName: { options: animations.names },
   });
 
   // useEffect(() => {
