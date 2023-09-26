@@ -27,14 +27,7 @@ export default function Fox(props) {
     };
   }, [animationName]);
 
-  return (
-    <primitive
-      object={fox.scene}
-      scale={0.02}
-      position={[-2.5, 0, 2.5]}
-      rotation-y={0.3}
-    />
-  );
+  return <primitive object={fox.scene} scale={0.05} />;
 
   // return (
   //   <group ref={group} {...props} dispose={null}>

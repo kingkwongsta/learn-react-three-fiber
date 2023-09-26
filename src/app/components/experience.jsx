@@ -20,7 +20,7 @@ import {
 } from "three";
 import { useRef, Suspense } from "react";
 import Floor from "./floor";
-import Test from "./test";
+import Text from "./text";
 import AE86 from "./models/ae86";
 import Fox from "./models/fox";
 import CustomGeo from "./customgeo";
@@ -105,13 +105,13 @@ export default function Experience() {
           }}
         >
           <Scene />
-          <Suspense fallback={<FallbackOption />}>
+          {/* <Suspense fallback={<FallbackOption />}>
             <Fox scale={0.05} />
-          </Suspense>
+          </Suspense> */}
 
           {/* <Rig> */}
           {/* </Rig> */}
-          <Floor />
+          <Text />
           {/* 
           <axesHelper args={[10]} />
           <gridHelper args={[20, 10, 0xff0000, "grey"]} />
